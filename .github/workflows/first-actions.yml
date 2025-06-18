@@ -1,28 +1,17 @@
-name: My First GitHub Actions
+name: First GitHub Actions Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9]
-
+  first-job:
+    runs-on: self-hosted  # <--- IMPORTANT: use self-hosted
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Print Hello
+        run: echo "🎉 Hello World from GitHub Actions!"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
+      - name: Print Goodbye
+        run: echo "👋 Bye from GitHub Actions!"
 
-    - name: Run tests
-      run: |
-        cd src
-        python -m pytest addition.py
