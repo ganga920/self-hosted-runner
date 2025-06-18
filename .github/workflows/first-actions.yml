@@ -1,17 +1,14 @@
 name: First GitHub Actions Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   first-job:
-    runs-on: self-hosted  # <--- IMPORTANT: use self-hosted
+    runs-on: self-hosted
     steps:
-      - name: Print Hello
-        run: echo "🎉 Hello World from GitHub Actions!"
+      - name: Say Hello
+        run: echo "✅ Hello from EC2 self-hosted runner!"
 
-      - name: Print Goodbye
-        run: echo "👋 Bye from GitHub Actions!"
+      - name: Say Bye
+        run: echo "👋 Goodbye from EC2!"
 
