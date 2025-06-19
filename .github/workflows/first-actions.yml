@@ -11,3 +11,4 @@ jobs:
       - name: Say Bye
         run: echo "👋 Goodbye from EC2!"
 
+# Triggering workflow again
