@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "✅ Hello from EC2 self-hosted runner!"
-
       - name: Say Bye
         run: echo "👋 Goodbye from EC2!"
 
